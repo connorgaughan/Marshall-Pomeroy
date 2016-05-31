@@ -1,0 +1,91 @@
+//------------------------------------------------------------------------------
+//	Base Typography Set Up
+//------------------------------------------------------------------------------
+
+// Set Up Base Font Size for the whole build
+$base-font-size: 16px;
+
+// Create REM Caclulation function for rem() mixin
+@function calculateRem($size) {
+  $remSize: $size / $base-font-size;
+  @return #{$remSize}rem;
+}
+
+// Import Fonts from Google
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,400italic);
+
+
+
+//------------------------------------------------------------------------------
+//	Scaffold Typography
+//------------------------------------------------------------------------------
+html{
+
+}
+
+body{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	color: $body;
+	font-size: $base-font-size;
+	-webkit-font-smoothing: antialiased;
+	line-height: 1.5;
+}
+
+p{
+	padding-bottom: .875em;
+}
+
+b,
+strong{
+	font-weight: 700;
+}
+
+em,
+i{
+	font-style: italic;
+}
+
+a{
+	text-decoration: none;
+	@include transition-short();
+
+	&:hover{
+		text-decoration: underline;
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+	line-height: 1.25;
+	font-weight: 700;
+	margin: 1.5em 0 .5em 0;
+}
+
+h1{
+	@include rem(32px);
+}
+
+h2{
+	@include rem(28px);
+}
+
+h3{
+	@include rem(24px);
+}
+
+h4{
+	@include rem(22px);
+}
+
+h5{
+	@include rem(20px);
+}
+
+h6{
+	@include rem(18px);
+}

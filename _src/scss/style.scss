@@ -1,0 +1,35 @@
+// -----------------------------------------------------------------------------
+// Basic Document Set Up
+// -----------------------------------------------------------------------------
+
+// Global Resets
+@import "resets/global";
+
+// Color Variables
+@import "libs/colors";
+
+// All Mixins for REM-PX conversions and Clearfixes
+@import "libs/mixins";
+
+// Set up for basic grid system including flexbox layouts
+@import "libs/grid";
+
+// Typography basics
+@import "libs/typography";
+
+// Global shared styles
+@import "libs/global";
+
+// Form styles
+@import "libs/forms";
+
+
+// -----------------------------------------------------------------------------
+// Page Specific Styles
+// -----------------------------------------------------------------------------
+
+// Header specific styles
+@import "partials/header";
+
+// Footer specific styles
+@import "partials/footer";
