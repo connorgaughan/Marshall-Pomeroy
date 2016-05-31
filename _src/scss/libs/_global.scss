@@ -6,3 +6,36 @@ body {
 	width: 100%;
 	position: relative;
 }
+
+.tout{
+	padding: 50px 0;
+	color: $white;
+	text-align: center;
+
+	h3{
+		font-weight: 300;
+		@include uppercase();
+	}
+}
+
+.button{
+	@include uppercase();
+	display: inline-block;
+	padding: .75em 1.5em;
+	margin: 2em 0 0 0;
+	border-radius: 100px;
+
+	&:hover{
+		text-decoration: none;
+	}
+
+	&.primary{
+		background: $red;
+		color: $white;
+
+		&:hover{
+			background: $body;
+			color: $white;
+		}
+	}
+}
