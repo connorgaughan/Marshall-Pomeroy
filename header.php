@@ -9,6 +9,14 @@
 			<script src="//oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 			<script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
+		<?php if(is_front_page()){ ?>
+			<style>
+				main{
+					background-image: url('<?php the_field('background_image_mobile'); ?>');
+				}
+				@media screen and (min-width:46em){main{ background-image: url('<?php the_field('background_image_desktop'); ?>'); }}
+			</style>
+		<?php } ?>
 	</head>
 	<body <?php body_class(); ?>>
 		<?php if( 'ocn' == get_field( 'menu_type', 'option' ) ): ?>
@@ -30,30 +38,27 @@
 				</div>
 			</div>
 		<?php endif; ?>
-		<header id="site-header">
+		<header>
 			<div class="container">
-				<a href="<?php echo home_url(); ?>" title="<?php bloginfo( 'name' ); ?>" id="brand">
-					<img src="<?php the_field( 'site_logo', 'option' ); ?>" alt="<?php bloginfo( 'name' ); ?>">
+				<a href="<?php echo home_url(); ?>" title="<?php bloginfo( 'name' ); ?>">
+					<img src="<?php the_field( 'site_logo', 'option' ); ?>" alt="<?php bloginfo( 'name' ); ?>" class="logo">
 				</a>
-				<button class="nav-toggle" type="button" id="nav-toggle">
-					<span></span>
-					<em>menu</em>
-				</button>
-				<?php
-					wp_nav_menu( array(
-						'container' => 'nav',
-						'container_id' => 'large-nav-primary',
-						'theme-location' => 'primary'
-					) );
-				?>
+				<div class="nav">
+					<button class="nav-toggle" type="button" id="nav-toggle">
+						<span></span>
+						<em>menu</em>
+					</button>
+				</div>
 			</div>
-			<?php
-				if( 'dropdown' == get_field( 'menu_type', 'option' ) ){
-					wp_nav_menu( array(
-						'container' => 'nav',
-						'container_id' => 'dropdown-nav-primary',
-						'theme-location' => 'primary'
-					) );
-				}
-			?>
 		</header>
+		<?php
+			// Set up global call for featured images
+			$hero = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+
+			if (!is_front_page() ) {
+		?>
+		<figure class="hero" <?php if(has_post_thumbnail()){ ?>style="background-image: url('<?php print $hero; ?>');"<?php } ?>></figure>
+		<?php } ?>
+
+
+

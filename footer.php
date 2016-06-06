@@ -1,16 +1,35 @@
-		<?php if(!is_page('contact')){
+		<?php if(is_front_page() ) { ?>
+			<div class="links">
+			<?php if( have_rows('links') ) { ?>
+				<div class="container">
+					<ul>
+					<?php while ( have_rows('links') ) : the_row();
+
+						$pageText 		= get_sub_field('link_text');
+						$pageLink			= get_sub_field('page_link');
+					?>
+						<li><a href="<?php print $pageLink; ?>" title="<?php print $pageText; ?>"><?php print $pageText; ?></a></li>
+					<?php endwhile; wp_reset_postdata(); ?>
+					</ul>
+				</div>
+			<?php } ?>
+			</div>
+		<?php } ?>
+
+		<?php if(!is_page('contact') && !is_front_page()){
 			$contactBg			= get_field('contact_background_image', 'option');
 			$contactTitle 	= get_field('contact_title', 'option');
 			$contactButton	= get_field('contact_button_text', 'option');
 			$contactLink		= get_field('contact_button_link', 'option');
 		?>
-			<section class="tout contact" <?php if($contactBg){ ?> style="background: url('<?php print $contactBg; ?>');" <?php } ?>>
+			<section class="tout contact" <?php if($contactBg){ ?> style="background-image: url('<?php print $contactBg; ?>');" <?php } ?>>
 				<div class="container">
 					<h3 class="contact-title"><?php print $contactTitle; ?></h3>
 					<a class="button primary" href="<?php print $contactLink; ?>" title="<?php print $contactTitle; ?>"><?php print $contactButton; ?></a>
 				</div>
 			</section>
 		<?php } ?>
+
 		<footer>
 			<div class="container">
 				<nav>

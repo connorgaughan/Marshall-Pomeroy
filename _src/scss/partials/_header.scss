@@ -1,3 +1,69 @@
 //------------------------------------------------------------------------------
 //  Global Header Styles
 //------------------------------------------------------------------------------
+
+header{
+	position: fixed;
+	top: 20px;
+	z-index: 77777;
+
+	.logo{
+		display: block;
+		float: left;
+		height: 50px;
+	}
+
+	.nav{
+		display: block;
+		float: left;
+		height: 50px;
+		padding: 10px;
+		margin-left: 15px;
+		background: $body;
+
+		#nav-toggle{
+			height: 20px;
+			width: 20px;
+			top: 50%;
+			transform: translateY(-50%);
+
+			span{
+				top: 50%;
+			}
+
+			span,
+			span:after,
+			span:before{
+				width: 100%;
+				height: 3px;
+			}
+
+			span:before{
+				top: -6px;
+			}
+
+			span:after{
+				top: 6px;
+			}
+		}
+	}
+}
+
+#ocn{
+	background: $white;
+
+	.menu{
+		padding: 0 20px;
+
+		li{
+			padding: 10px 0;
+		}
+	}
+}
+
+.hero{
+	height: 40vh;
+	background: linear-gradient( -45deg, darken($red, 20%), $red );
+	background-size: cover;
+	background-position: center center;
+}

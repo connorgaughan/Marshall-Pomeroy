@@ -10,10 +10,14 @@ body {
 .tout{
 	padding: 50px 0;
 	color: $white;
+	background: $red;
+	background-position: center center;
+	background-size: cover;
 	text-align: center;
 
 	h3{
 		font-weight: 300;
+		color: $white;
 		@include uppercase();
 	}
 }
@@ -21,6 +25,7 @@ body {
 .button{
 	@include uppercase();
 	display: inline-block;
+	text-align: center;
 	padding: .75em 1.5em;
 	margin: 2em 0 0 0;
 	border-radius: 100px;
@@ -38,4 +43,8 @@ body {
 			color: $white;
 		}
 	}
+}
+
+.page-content{
+	padding-bottom: 10vh;
 }

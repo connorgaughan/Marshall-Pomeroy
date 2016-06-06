@@ -1,5 +1,8 @@
 label, select {
 	display: block;
+	@include uppercase();
+	padding: 25px 0 0 20px;
+	@include rem(12px);
 }
 
 input[type="search"] {
@@ -35,13 +38,15 @@ input[type="search"],
 input[type="tel"],
 select {
 	border:none;
-	padding:.5em;
+	padding:.5em 20px;
 	width:100%;
-	background: lighten($body, 85%);
+	background: $white;
+	border: 2px solid $grey;
+	border-radius: 25px;
 	transition: all 350ms ease-in-out;
 
 	&:focus{
-		background:lighten($body, 95%);
+		border: 2px solid $red;
 	}
 }
 

@@ -57,6 +57,11 @@ a{
 	}
 }
 
+ul,
+ol{
+	padding-left: 2em;
+}
+
 h1,
 h2,
 h3,
@@ -66,10 +71,15 @@ h6{
 	line-height: 1.25;
 	font-weight: 700;
 	margin: 1.5em 0 .5em 0;
+	color: $red;
+	font-weight: 500;
+	@include uppercase();
 }
 
 h1{
 	@include rem(32px);
+	font-weight: 300;
+	color: $body;
 }
 
 h2{

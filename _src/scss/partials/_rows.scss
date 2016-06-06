@@ -1,0 +1,70 @@
+.intro{
+	padding-bottom: 30px;
+
+	@media screen and (min-width:46em){
+		padding-bottom: 60px;
+	}
+}
+
+.row{
+	padding: 30px 0;
+
+	@media screen and (min-width:46em){
+		padding: 60px 0;
+	}
+
+	&-image img{
+		display: block;
+		margin: 0 auto;
+	}
+
+	&:nth-child(even){
+		background: lighten($grey, 20%);
+	}
+
+	@media screen and (min-width:46em){
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6{
+			&:first-child{
+				margin-top: 0;
+			}
+		}
+		&-image{
+			width: 35%;
+		}
+
+		&-content{
+			width: 60%;
+		}
+
+		&:nth-child(even){
+			.row-image,
+			.row-content{
+				float: left;
+			}
+
+			.row-image{
+				margin-right: 5%;
+			}
+		}
+
+		&:nth-child(odd){
+			.row-image,
+			.row-content{
+				float: right;
+			}
+
+			.row-image{
+				margin-left: 5%;
+			}
+
+			.row-content{
+				text-align: right;
+			}
+		}
+	}
+}

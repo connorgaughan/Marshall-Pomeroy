@@ -28,8 +28,9 @@
 // Page Specific Styles
 // -----------------------------------------------------------------------------
 
-// Header specific styles
 @import "partials/header";
-
-// Footer specific styles
+@import "partials/home";
+@import "partials/breadcrumbs";
+@import "partials/rows";
+@import "partials/contact";
 @import "partials/footer";
