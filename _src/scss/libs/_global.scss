@@ -7,6 +7,12 @@ body {
 	position: relative;
 }
 
+// Sample class to test jQuery and medi queries
+.jquery {display:block; height: 0; width: 0; visibility: hidden;}
+@media only screen and (max-width: 46em){
+	.jquery {display:none;}
+}
+
 .tout{
 	padding: 50px 0;
 	color: $white;

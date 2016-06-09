@@ -49,6 +49,7 @@
 				</nav>
 			</div>
 		</footer>
+		<span class="jquery"></span>
 		<?php wp_footer(); ?>
 	</body>
 </html>

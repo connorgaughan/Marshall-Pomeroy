@@ -9,12 +9,13 @@
 			<script src="//oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 			<script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
-		<?php if(is_front_page()){ ?>
+		<?php if(is_front_page()){
+			$panelLeftBg  = get_field('panel_left_background_image');
+			$panelRightBg = get_field('panel_right_background_image');
+		?>
 			<style>
-				main{
-					background-image: url('<?php the_field('background_image_mobile'); ?>');
-				}
-				@media screen and (min-width:46em){main{ background-image: url('<?php the_field('background_image_desktop'); ?>'); }}
+				.panel-left:before{ background-image: url(<?php print $panelLeftBg; ?>); }
+				.panel-right:before{ background-image: url(<?php print $panelRightBg; ?>); }
 			</style>
 		<?php } ?>
 	</head>
