@@ -12,7 +12,7 @@
 	function checkSize(){
     if ($(".jquery").css("display") == "block" ){
 
-    	$('.home-button_left').on('click', function(e){
+    	$('.home-button_left').mouseenter(function(e){
     		if($(this).hasClass('passive')){
     			e.preventDefault();
     		}
@@ -34,7 +34,7 @@
 
 
 
-    	$('.home-button_right').on('click', function(e){
+    	$('.home-button_right').mouseenter(function(e){
     		if($(this).hasClass('passive')){
     			e.preventDefault();
     		}
@@ -55,7 +55,7 @@
 
 
 
-    	$('.home-button_center').on('click', function(e){
+    	$('.home-button_center').mouseenter(function(e){
     		if($(this).hasClass('passive')){
     			e.preventDefault();
     		}

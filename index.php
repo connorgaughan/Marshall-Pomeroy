@@ -34,13 +34,16 @@ $intro 					= get_field('page_intro');
 				<?php while ( have_rows('rows') ) : the_row();
 					$rowImage 			= get_sub_field('row_image');
 					$rowContent 		= get_sub_field('row_content');
+					$rowTitle 			= get_sub_field('row_title');
+					$rowId 					= sanitize_title($rowTitle);
 				?>
-				<div class="row">
+				<div class="row" id="<?php print $rowId; ?>">
 					<div class="container">
 						<div class="row-image">
 							<img src="<?php print $rowImage; ?>" />
 						</div>
 						<div class="row-content">
+							<h2><?php print $rowTitle; ?></h2>
 							<?php print $rowContent; ?>
 						</div>
 					</div>

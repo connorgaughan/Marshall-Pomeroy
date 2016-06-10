@@ -1,18 +1,12 @@
 		<?php if(is_front_page() ) { ?>
 			<div class="links">
-			<?php if( have_rows('links') ) { ?>
 				<div class="container">
 					<ul>
-					<?php while ( have_rows('links') ) : the_row();
-
-						$pageText 		= get_sub_field('link_text');
-						$pageLink			= get_sub_field('page_link');
-					?>
-						<li><a href="<?php print $pageLink; ?>" title="<?php print $pageText; ?>"><?php print $pageText; ?></a></li>
-					<?php endwhile; wp_reset_postdata(); ?>
+						<li>Audio Video</li>
+						<li>Integration</li>
+						<li>Automation</li>
 					</ul>
 				</div>
-			<?php } ?>
 			</div>
 		<?php } ?>
 

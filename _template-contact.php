@@ -19,7 +19,7 @@ $form 	= get_field('contact_form_shortcode');
 			<h1><?php the_title(); ?></h1>
 			<?php the_content(); ?>
 		</div>
-		<div class="row">
+		<div class="row row-contact">
 			<div class="container">
 				<ul class="contact-us-row">
 					<li class="phone-icon"><?php print $phone; ?></li>

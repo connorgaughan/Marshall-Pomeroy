@@ -11,21 +11,29 @@ header{
 		display: block;
 		float: left;
 		height: 50px;
+
+		@media screen and (min-width:46em){
+			height: 70px;
+		}
 	}
 
 	.nav{
+		z-index: 999999;
 		display: block;
 		float: left;
-		height: 50px;
-		padding: 10px;
 		margin-left: 15px;
 		background: $body;
+		@include transition-short();
 
 		#nav-toggle{
 			height: 20px;
 			width: 20px;
-			top: 50%;
-			transform: translateY(-50%);
+			margin: 13px 10px 17px 10px;
+			opacity: 1;
+			@include transition-short();
+			@media screen and (min-width: 46em){
+				margin: 23px 10px 27px 10px;
+			}
 
 			span{
 				top: 50%;
@@ -44,6 +52,122 @@ header{
 
 			span:after{
 				top: 6px;
+			}
+		}
+
+		nav{
+			display: none;
+		}
+
+		@media screen and(min-width:56em){
+
+			nav{
+				@include rem(12px);
+				@include uppercase();
+				display: none;
+				opacity: 0;
+				@include transition-short();
+
+				li{
+					padding: 10px 20px;
+
+					&.menu-item-has-children{
+
+						&:hover{
+							ul{
+								display: block;
+							}
+						}
+
+						ul{
+							display: none;
+							text-align: center;
+							padding: 15px 0;
+							background: $grey;
+							position: absolute;
+							left: calc(100% - 20px);
+							top: 0;
+							width: 400px;
+
+							li{
+								@include rem(18px);
+								font-weight: 100;
+								width: 50%;
+								display: block;
+								float: left;
+
+								a{
+									color: $red;
+								}
+
+								&.menu-item-has-children{
+									padding: 0 10px;
+									position: relative;
+
+									&:first-child{
+										&:after{
+											content: '';
+											display: block;
+											height: 100%;
+											width: 1px;
+											background: $body;
+											position: absolute;
+											top: 0;
+											right: 0;
+										}
+									}
+
+									&>a:after{
+										display: none;
+									}
+
+									ul{
+										position: static;
+										width: 100%;
+
+										li{
+											@include rem(12px);
+											width: 100%;
+											float: none;
+											display: block;
+
+											a{
+												color: $body;
+											}
+										}
+									}
+								}
+							}
+						}
+
+						&>a:after{
+							content: '';
+							background: url('../images/right-arrow.png') center center no-repeat;
+							background-size: cover;
+							display: inline-block;
+							height: 10px;
+							width: 6px;
+							margin-left: 10px;
+						}
+					}
+				}
+
+				a{
+					color: $white;
+				}
+			}
+
+			&:hover{
+				padding: 0;
+
+				#nav-toggle{
+					opacity: 0;
+				}
+
+				nav{
+					display: block;
+					opacity: 1;
+				}
 			}
 		}
 	}

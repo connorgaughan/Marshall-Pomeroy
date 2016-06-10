@@ -78,6 +78,7 @@ h6{
 
 h1{
 	@include rem(32px);
+	margin-bottom: 50px;
 	font-weight: 300;
 	color: $body;
 }
